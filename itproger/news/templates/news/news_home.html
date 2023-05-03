@@ -1,0 +1,23 @@
+{% extends 'main\layout.html' %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>News</h1>
+    <p>Welcome!</p>
+    <button class="btn btn-warning">About us</button>
+
+    {% if news %}
+        {% for el in news %}
+            <div class="alert alert-warning news_card">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anouns }}</p>
+            </div>
+        {% endfor %}
+    {% else %} 
+            <p>Nothing new for now</p>
+    {% endif %}
+</div>
+
+{% endblock %}
